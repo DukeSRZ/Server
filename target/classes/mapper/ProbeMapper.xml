@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ax.manager.dao.ProbeMapper">
+    <resultMap id="BaseResultMap" type="com.ax.manager.pojo.Probe">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="code" jdbcType="INTEGER" property="code"/>
+        <result column="results_msg" jdbcType="VARCHAR" property="results_msg"/>
+        <result column="help_msg" jdbcType="VARCHAR" property="help_msg"/>
+        <result column="source_ip" jdbcType="VARCHAR" property="source_ip"/>
+        <result column="source_port" jdbcType="VARCHAR" property="source_port"/>
+        <result column="target_ip" jdbcType="VARCHAR" property="target_ip"/>
+        <result column="target_port" jdbcType="VARCHAR" property="target_port"/>
+        <result column="session_id" jdbcType="VARCHAR" property="session_id"/>
+        <result column="create_time" jdbcType="VARCHAR" property="create_time"/>
+        <result column="update_time" jdbcType="VARCHAR" property="update_time"/>
+        <result column="probe_results" jdbcType="VARCHAR" property="probe_results"/>
+        <result column="detection_mode" jdbcType="VARCHAR" property="detection_mode"/>
+    </resultMap>
+
+    <select id="getProbeList" resultType="com.ax.manager.dto.ProbeDTO">
+        SELECT
+        id,
+        code AS code,
+        results_msg AS results_msg,
+        help_msg AS help_msg,
+        source_ip AS source_ip,
+        source_port AS source_port,
+        target_ip AS target_ip,
+        target_port AS target_port,
+        session_id AS session_id,
+        create_time AS create_time,
+        update_time AS update_time,
+        probe_results AS probe_results,
+        detection_mode AS detection_mode
+        FROM detection_results
+        <where>
+            <if test="create_time != null and create_time != '' ">
+                and create_time &gt; #{create_time}
+            </if>
+            <if test="update_time != null and update_time != '' ">
+                and update_time &lt; #{update_time}
+            </if>
+        </where>
+        order by create_time desc
+    </select>
+
+</mapper>

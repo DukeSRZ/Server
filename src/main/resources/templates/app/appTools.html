@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head th:include="layout :: htmlhead" th:with="title='应用管理'"></head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <!--头-->
+    <div th:replace="fragments/head :: header"></div>
+    <!--<div class="layui-upload" style="text-align: center;margin-top: 200px">
+        <button type="button" class="layui-btn layui-btn-lg layui-btn-warm layui-btn-radius" id="test8">
+            <i class="layui-icon layui-icon-file-b"></i> 选择文件
+        </button><br>
+        <button type="button" class="layui-btn layui-btn-lg layui-btn-normal layui-btn-radius" id="test9" style="margin-top: 15px">
+            <i class="layui-icon layui-icon-upload"></i> 开始上传
+        </button>
+    </div>-->
+    <div style="text-align: center;">
+        <div class="layui-upload-drag" id="test10"
+             style="width: 300px;height: 170px;margin-top: 200px;margin-left: 150px;border:2px dashed #009688;">
+            <div style="margin-top: 40px">
+                <i class="layui-icon"></i>
+                <p style="color: #5FB878;font-weight: 600;">点击上传，或将文件拖拽到此处</p>
+                <p style="color: #FFB800;font-weight: 600;">（仅支持 xlsx、xls 两种文件格式，最大5MB）</p>
+                <div class="layui-hide" id="uploadDemoView">
+                    <hr>
+                    <img src="" alt="上传成功后渲染" style="max-width: 196px">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <div th:replace="fragments/footer :: footer"></div>
+    <script src="/js/app/appTool.js"></script>
+
+</div>
+</body>
+</html>

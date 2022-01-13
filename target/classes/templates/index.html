@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>应用门户-首页</title>
+    <link rel="icon" href="images/manageLogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="js/jquery/jquery-3.3.1.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="js/portal/index.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- nav部分 -->
+<div class="nav index">
+    <div class="layui-container">
+        <!-- 公司logo -->
+        <div class="nav-logo">
+            <a href="index">
+                <img src="images/ax.png" style="height: 55px">
+                <!--<img src="images/logo.png" alt="应用门户-首页">-->
+                <p class="layui-text"></p>
+            </a>
+        </div>
+        <div class="nav-list">
+            <button>
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="layui-nav" lay-filter="">
+                <li class="layui-nav-item"><a href="index">首页</a></li>
+                <li class="layui-nav-item"><a href="about">关于</a></li>
+                <!--<li class="layui-nav-item"><a href="news">动态</a></li>
+                <li class="layui-nav-item"><a href="case">案例</a></li>
+                <li class="layui-nav-item"><a href="about">关于</a></li>-->
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- banner部分 -->
+<div>
+    <div class="layui-carousel" id="banner">
+        <div carousel-item>
+            <div>
+                <img src="images/banner1.jpg">
+                <div class="panel">
+                    <p class="title" style="color: #0C0C0C">建设运维中心</p>
+                    <p>应用集成门户</p>
+                </div>
+            </div>
+            <div>
+                <img src="images/banner2.jpg">
+                <div class="panel">
+                    <p class="title" style="color: #0C0C0C">建设运维中心</p>
+                    <p>应用集成门户</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- main部分 -->
+<div class="main-product">
+    <div class="layui-container">
+        <p class="title">专为高效运维而研制的<span style="color: darkcyan">管理工具</span></p>
+        <div class="layui-row layui-col-space25" id="apps">
+        </div>
+    </div>
+</div>
+<!--<div class="main-service">
+  <div class="layui-container">
+    <p class="title">为客户打造完美的<span>专业服务</span></p>
+    <div class="layui-row layui-col-space25 layui-col-space80">
+      <div class="layui-col-sm6">
+        <div class="content">
+          <div class="content-left"><img src="images/home_img1.jpg"></div>
+          <div class="content-right">
+            <p class="label">1 对 1 前端指导</p>
+            <span></span>
+            <p>更有多个包含不同主题的Web组件，可快速构建界面出色、体验优秀的跨屏页面，大幅提升开发效率。</p>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-sm6">
+        <div class="content">
+          <div class="content-left"><img src="images/home_img2.jpg"></div>
+          <div class="content-right">
+            <p class="label">1 对 1 前端指导</p>
+            <span></span>
+            <p>更有多个包含不同主题的Web组件，可快速构建界面出色、体验优秀的跨屏页面，大幅提升开发效率。</p>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-sm6">
+        <div class="content">
+          <div class="content-left"><img src="images/home_img3.jpg"></div>
+          <div class="content-right">
+            <p class="label">1 对 1 前端指导</p>
+            <span></span>
+            <p>更有多个包含不同主题的Web组件，可快速构建界面出色、体验优秀的跨屏页面，大幅提升开发效率。</p>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-sm6">
+        <div class="content">
+          <div class="content-left"><img src="images/home_img4.jpg"></div>
+          <div class="content-right">
+            <p class="label">1 对 1 前端指导</p>
+            <span></span>
+            <p>更有多个包含不同主题的Web组件，可快速构建界面出色、体验优秀的跨屏页面，大幅提升开发效率。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="service-more"><a href="">查看更多</a></div>
+  </div>
+</div>-->
+<!-- footer部分 -->
+<div class="footer">
+    <div class="layui-container">
+        <p class="footer-web">
+            <a>合作伙伴</a>
+            <a>建设运维中心——系统部</a>
+        </p>
+        <div class="layui-row footer-contact">
+            <div class="layui-col-sm2 layui-col-lg1"></div>
+            <div class="layui-col-sm10 layui-col-lg11">
+                <div class="layui-row">
+                    <div class="layui-col-sm6 layui-col-md8 layui-col-lg9">
+                        <p class="contact-top"><i class="layui-icon layui-icon-cellphone"></i>&nbsp;176-0167-5419&nbsp;&nbsp;(9:00-17:00)
+                        </p>
+                        <p class="contact-bottom"><i
+                                class="layui-icon layui-icon-home"></i>&nbsp;zhangshurui@anicert.cn</span></p>
+                    </div>
+                    <div class="layui-col-sm6 layui-col-md4 layui-col-lg3">
+                        <p class="contact-top"><span class="right">版权归建设运维中心所有</span></p>
+                        <p class="contact-bottom"><span class="right">Copyright&nbsp;©&nbsp;2019-2020&nbsp;&nbsp;ICP&nbsp;备******号</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/firm.js"></script>
+</body>
+</html>

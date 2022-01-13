@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head th:include="layout :: htmlhead" th:with="title='应用管理'"></head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <!--头-->
+    <div th:replace="fragments/head :: header"></div>
+
+    <div class="layui-body" style="margin: 1%">
+
+        <form id="appSearch" class="layui-form layui-form-pane" method="post" action="" style="margin-top: 20px;">
+            <div class="layui-form-item">
+                <label class="layui-form-label">应用名称</label>
+                <div class="layui-input-inline">
+                    <input id="sysUserName" name="appName" autocomplete="off" class="layui-input" type="text"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">注册时间</label>
+                    <div class="layui-input-inline" style="width: 175px;">
+                        <input name="startTime" id="startTime" placeholder="yyyy-MM-dd" autocomplete="off"
+                               class="layui-input" type="text"/>
+                    </div>
+                    <div class="layui-form-mid">-</div>
+                    <div class="layui-input-inline" style="width: 175px;">
+                        <input name="endTime" id="endTime" placeholder="yyyy-MM-dd" autocomplete="off"
+                               class="layui-input" type="text"/>
+                    </div>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    <button class="layui-btn" lay-submit="" lay-filter="searchSubmit">提交</button>
+                </div>
+            </div>
+        </form>
+
+        <!--<hr class="layui-bg-blue"/>-->
+        <hr class="layui-bg-black"/>
+
+        <button class="layui-btn layui-btn-normal" onclick="addApp()">应用注册</button>
+
+        <table id="appList" lay-filter="appTable"></table>
+
+        <script type="text/html" id="optBar">
+            <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        </script>
+    </div>
+
+    <!--添加或编辑应用-->
+    <div id="setApp" class="layer_self_wrap" style="width:500px;display:none;">
+        <form id="appForm" class="layui-form layui-form-pane" method="post" action=""
+              style="margin-top: 20px;margin-left:120px">
+            <input id="pageNum" type="hidden" name="pageNum"/>
+            <input id="id" type="hidden" name="id"/>
+            <div class="layui-form-item">
+                <label class="layui-form-label">应用名称</label>
+                <div class="layui-input-inline">
+                    <input id="appName" name="appName" lay-verify="required" autocomplete="off" class="layui-input"
+                           type="text"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">应用地址</label>
+                <div class="layui-input-inline">
+                    <input id="appUrl" name="appUrl" lay-verify="required" autocomplete="off" class="layui-input"
+                           type="text"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-inline">
+                    <input id="imgUrl" name="imgUrl" lay-verify="required" autocomplete="off" class="layui-input"
+                           type="hidden"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">应用图标</label>
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn" id="uploadImg">
+                        <i class="layui-icon">&#xe67c;</i>上传图标
+                    </button>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">应用介绍</label>
+                <div class="layui-input-block">
+                    <textarea id="appIntroduce" name="appIntroduce" placeholder="请输入内容"
+                              class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block" style="margin-left: 10px;">
+                    <button class="layui-btn" lay-submit="" lay-filter="appSubmit">提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--底部-->
+    <div th:replace="fragments/footer :: footer"></div>
+    <script src="/js/dateUtils.js"></script>
+    <script src="/js/app/app.js"></script>
+
+</div>
+</body>
+</html>

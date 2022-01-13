@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ax.manager.dao.AxAppMapper">
+    <resultMap id="BaseResultMap" type="com.ax.manager.pojo.AxApp">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="app_name" jdbcType="VARCHAR" property="appName"/>
+        <result column="app_url" jdbcType="VARCHAR" property="appUrl"/>
+        <result column="create_time" jdbcType="VARCHAR" property="createTime"/>
+        <result column="app_introduce" jdbcType="VARCHAR" property="appIntroduce"/>
+    </resultMap>
+
+    <select id="getAppList" resultType="com.ax.manager.dto.AxAppDTO">
+        SELECT id, app_name AS appName, app_url AS appUrl, create_time AS createTime
+        ,img_url AS imgUrl, app_introduce AS appIntroduce
+        FROM ax_app
+        <where>
+            <if test="appName != null and appName != '' ">
+                and app_name LIKE '%' #{appName} '%'
+            </if>
+            <if test="appUrl != null and appUrl != '' ">
+                and app_url LIKE '%' #{appUrl} '%'
+            </if>
+            <if test="startTime != null and startTime != '' ">
+                and create_time &gt; #{startTime}
+            </if>
+            <if test="endTime != null and endTime != '' ">
+                and create_time &lt; #{endTime}
+            </if>
+        </where>
+    </select>
+
+    <select id="getApp" resultType="com.ax.manager.pojo.AxApp">
+        SELECT
+        id,
+        app_name AS appName,
+        app_url AS appUrl,
+        img_url AS imgUrl,
+        create_time AS createTime,
+        app_introduce AS appIntroduce
+        FROM ax_app
+    </select>
+
+    <select id="getAppById" resultType="com.ax.manager.pojo.AxApp">
+        SELECT
+        id,
+        app_name AS appName,
+        app_url AS appUrl,
+        img_url AS imgUrl,
+        create_time AS createTime,
+        app_introduce AS appIntroduce
+        FROM ax_app where id = #{id}
+    </select>
+
+    <update id="updateApp">
+        UPDATE ax_app
+        <set>
+            <if test="appName != null">
+                app_name = #{appName},
+            </if>
+            <if test="appUrl != null">
+                app_url = #{appUrl},
+            </if>
+            <if test="imgUrl != null">
+                img_url = #{imgUrl},
+            </if>
+            <if test="appIntroduce != null">
+                app_introduce = #{appIntroduce}
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <insert id="addAPP" parameterType="com.ax.manager.pojo.AxApp">
+        INSERT INTO ax_app (app_name,app_url,create_time,img_url,app_introduce)
+        values (#{appName},#{appUrl},#{createTime},#{imgUrl},#{appIntroduce})
+    </insert>
+
+    <delete id="deleteAppById" parameterType="java.lang.Long">
+        DELETE FROM ax_app where id = #{id}
+    </delete>
+</mapper>
