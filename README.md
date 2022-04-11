@@ -17,7 +17,7 @@ JQuery  3.3.1
 
 ## 数据库
 MariaDB-5.5.65
-数据结构存放于码云 server/main/resources/sql 中 
+数据结构存放于 server/main/resources/sql 中 
 
 ## 渲染模板
 Thymeleaf
