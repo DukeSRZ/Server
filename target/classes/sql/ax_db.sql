@@ -1,10 +1,5 @@
 /*
  Navicat Premium Data Transfer
-
- Source Server         : 测试线——MySQL集群
- Source Server Type    : MySQL
- Source Server Version : 50729
- Source Host           : 172.16.42.99:3306
  Source Schema         : ax_db
 
  Target Server Type    : MySQL
@@ -104,7 +99,7 @@ CREATE TABLE `base_admin_user`  (
 -- ----------------------------
 -- Records of base_admin_user
 -- ----------------------------
-INSERT INTO `base_admin_user` VALUES (1, 'root', '32e58d413c76a38debeb3e4af7ce46b9', 1, '17601625419', '2018-11-22 10:57:33', 1);
+INSERT INTO `base_admin_user` VALUES (1, 'root', '32e58d413c76a38debeb3e4af7ce46b9', 1, '18801296887', '2018-11-22 10:57:33', 1);
 INSERT INTO `base_admin_user` VALUES (2, 'admin', '43442676c74ae59f219c2d87fd6bad52', 2, '18801296887', '2020-05-28 22:29:11', 1);
 
 SET FOREIGN_KEY_CHECKS = 1;
