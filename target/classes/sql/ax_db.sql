@@ -1,14 +1,3 @@
-/*
- Navicat Premium Data Transfer
- Source Schema         : ax_db
-
- Target Server Type    : MySQL
- Target Server Version : 50729
- File Encoding         : 65001
-
- Date: 13/08/2020 11:01:34
-*/
-
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
