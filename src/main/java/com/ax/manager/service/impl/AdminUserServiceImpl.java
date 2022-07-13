@@ -66,7 +66,7 @@ public class AdminUserServiceImpl implements AdminUserService {
             }
             String username = user.getSysUserName();
             if (user.getSysUserPwd() == null) {
-                String password = DigestUtils.Md5(username, "Ax05#!/");
+                String password = DigestUtils.Md5(username, "05#!/");
                 user.setSysUserPwd(password);
             } else {
                 String password = DigestUtils.Md5(username, user.getSysUserPwd());
